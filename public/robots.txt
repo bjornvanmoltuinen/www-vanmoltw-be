@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://find-my-company-page.lovable.app/sitemap.xml
+Sitemap: https://vanmol.lovable.app/sitemap.xml
