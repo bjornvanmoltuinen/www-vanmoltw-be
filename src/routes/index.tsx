@@ -127,20 +127,22 @@ function Index() {
       </section>
 
       <section id="werkgebied" className="mx-auto max-w-6xl scroll-mt-20 px-5 pb-16">
-        <div className="rounded-3xl bg-accent p-8 md:p-12">
-          <div className="flex flex-wrap items-center gap-5">
-            <span className="grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground"><MapPin className="h-7 w-7" /></span>
+        <div className="grid gap-8 rounded-3xl bg-accent p-8 md:grid-cols-2 md:items-center md:gap-12 md:p-12">
+          <div className="flex items-center gap-5">
+            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground"><MapPin className="h-7 w-7" /></span>
             <div>
               <h2 className="text-2xl font-extrabold text-primary md:text-3xl">Werkgebied</h2>
               <p className="text-muted-foreground">Wij komen bij u in deze streken.</p>
             </div>
           </div>
-          <ul className="mt-7 flex flex-wrap gap-3">
-            {AREA.map((a) => (
-              <li key={a} className="flex items-center gap-2 rounded-full bg-card px-5 py-2 font-bold text-primary ring-1 ring-border"><MapPin className="h-4 w-4 text-secondary" />{a}</li>
-            ))}
-          </ul>
-          <p className="mt-6 text-sm text-muted-foreground">Buiten deze streken? Vraag gerust contact op – ons werkgebied kan uitgebreid worden.</p>
+          <div>
+            <ul className="flex flex-wrap gap-3">
+              {AREA.map((a) => (
+                <li key={a} className="flex items-center gap-2 rounded-full bg-card px-5 py-2 font-bold text-primary ring-1 ring-border"><MapPin className="h-4 w-4 text-secondary" />{a}</li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm text-muted-foreground">Buiten deze streken? Vraag gerust contact op – ons werkgebied kan uitgebreid worden.</p>
+          </div>
         </div>
       </section>
 
