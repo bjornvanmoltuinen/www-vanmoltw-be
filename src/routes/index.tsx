@@ -7,16 +7,19 @@ import woningLogo from "@/assets/woning-logo.png.asset.json";
 const PHONE = "+32 470 66 64 24";
 const TEL = "tel:+32470666424";
 const EMAIL = "vanmoltuinen@gmail.com";
-const AREA = ["Heel Limburg"];
-const AREA_PLACES = ["Limburg, België"];
+const AREA = ["Limburg", "Antwerpen", "Vlaams-Brabant"];
+const AREA_PLACES = ["Limburg, België", "Antwerpen, België", "Vlaams-Brabant, België"];
+const AREA_TEXT = AREA.length > 2 ? `${AREA.slice(0, -1).join(", ")} en ${AREA[AREA.length - 1]}` : AREA.join(" en ");
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vanmol Tuinen & Woningservice – Heel Limburg" },
-      { name: "description", content: "Vanmol Tuinen: tuinonderhoud en snoeiwerken. Vanmol Woningservice: woningen leeg en netjes opgeleverd. Actief in heel Limburg. Vraag een vrijblijvende offerte." },
+      { title: "Vanmol Tuinen & Woningservice – Limburg, Antwerpen & Vlaams-Brabant" },
+      { name: "description", content: "Vanmol Tuinen: tuinonderhoud en snoeiwerken. Vanmol Woningservice: woningen leeg en netjes opgeleverd. Actief in Limburg, Antwerpen en Vlaams-Brabant. Vraag een vrijblijvende offerte." },
       { property: "og:title", content: "Vanmol Tuinen & Woningservice" },
-      { property: "og:description", content: "Tuinonderhoud, snoeiwerken en woningontruiming in heel Limburg. Bel +32 470 66 64 24 voor een vrijblijvende offerte." },
+      { property: "og:description", content: "Tuinonderhoud, snoeiwerken en woningontruiming in Limburg, Antwerpen en Vlaams-Brabant. Bel +32 470 66 64 24 voor een vrijblijvende offerte." },
+
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -133,7 +136,7 @@ function Index() {
             <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground"><MapPin className="h-7 w-7" /></span>
             <div>
               <h2 className="text-2xl font-extrabold text-primary md:text-3xl">Werkgebied</h2>
-              <p className="text-muted-foreground">Wij komen in heel Limburg bij u.</p>
+              <p className="text-muted-foreground">Wij komen in {AREA_TEXT} bij u.</p>
             </div>
           </div>
           <div>
@@ -142,7 +145,7 @@ function Index() {
                 <li key={a} className="flex items-center gap-2 rounded-full bg-card px-5 py-2 font-bold text-primary ring-1 ring-border"><MapPin className="h-4 w-4 text-secondary" />{a}</li>
               ))}
             </ul>
-            <p className="mt-5 text-sm text-muted-foreground">Buiten Limburg? Vraag gerust contact op – ons werkgebied kan uitgebreid worden.</p>
+            <p className="mt-5 text-sm text-muted-foreground">Buiten deze provincies? Vraag gerust contact op – ons werkgebied kan uitgebreid worden.</p>
           </div>
         </div>
       </section>
@@ -159,7 +162,7 @@ function Index() {
       </section>
 
       <footer className="border-t border-border py-6 text-center text-sm text-muted-foreground">
-        <p className="mb-1"><MapPin className="mr-1 inline h-4 w-4" />Werkzaam in {AREA.join(" en ")}</p>
+        <p className="mb-1"><MapPin className="mr-1 inline h-4 w-4" />Werkzaam in {AREA_TEXT}</p>
         © {new Date().getFullYear()} Vanmol Tuinen & Vanmol Woningservice
       </footer>
     </div>
