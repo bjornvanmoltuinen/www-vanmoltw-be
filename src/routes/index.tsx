@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, Check, MapPin } from "lucide-react";
 import hero from "@/assets/hero.jpg";
-import tuinenLogo from "@/assets/tuinen-logo.png.asset.json";
-import woningLogo from "@/assets/woning-logo.png.asset.json";
+import tuinenLogo from "@/assets/tuinen-logo.png";
+import woningLogo from "@/assets/woning-logo.png";
 
 const PHONE = "+32 470 66 64 24";
 const TEL = "tel:+32470666424";
@@ -76,8 +76,8 @@ function Index() {
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <div className="flex items-center gap-2">
-            <img src={tuinenLogo.url} alt="Vanmol Tuinen" className="h-12 w-12 object-contain" />
-            <img src={woningLogo.url} alt="Vanmol Woningservice" className="h-12 w-12 object-contain" />
+            <img src={tuinenLogo} alt="Vanmol Tuinen" className="h-12 w-12 object-contain" />
+            <img src={woningLogo} alt="Vanmol Woningservice" className="h-12 w-12 object-contain" />
           </div>
           <nav className="hidden gap-6 font-semibold md:flex">
             <a href="#tuinen">Tuinen</a><a href="#woning">Woningservice</a><a href="#werkgebied">Werkgebied</a><a href="#contact">Contact</a>
@@ -102,7 +102,7 @@ function Index() {
 
       <section id="tuinen" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20">
         <div className="mb-10 flex items-center gap-5">
-          <img src={tuinenLogo.url} alt="" className="h-24 w-24 object-contain" loading="lazy" />
+          <img src={tuinenLogo} alt="" className="h-24 w-24 object-contain" loading="lazy" />
           <div>
             <h2 className="text-3xl font-extrabold text-primary md:text-4xl">Vanmol Tuinen</h2>
             <p className="text-muted-foreground">Onderhoud, snoeiwerken en verzorgde tuinen – het hele jaar door.</p>
@@ -114,7 +114,7 @@ function Index() {
       <section id="woning" className="scroll-mt-20 bg-accent">
         <div className="mx-auto max-w-6xl px-5 py-20">
           <div className="mb-10 flex items-center gap-5">
-            <img src={woningLogo.url} alt="" className="h-24 w-24 object-contain" loading="lazy" />
+            <img src={woningLogo} alt="" className="h-24 w-24 object-contain" loading="lazy" />
             <div>
               <h2 className="text-3xl font-extrabold text-primary md:text-4xl">Vanmol Woningservice</h2>
               <p className="text-muted-foreground">Woningen en buitenruimte leeg en netjes opgeleverd.</p>
