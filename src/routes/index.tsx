@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, Mail, Check, MapPin } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import tuinenLogo from "@/assets/tuinen-logo.png";
@@ -123,6 +123,9 @@ function Index() {
             </div>
           </div>
           <Cards data={woning} />
+          <div className="mt-8 text-center">
+            <Link to="/woning-leegmaken-limburg-kempen" className="inline-block rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground">Meer over onze woningservice</Link>
+          </div>
         </div>
       </section>
 
