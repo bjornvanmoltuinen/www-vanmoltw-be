@@ -16,13 +16,15 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Vanmol Tuinen & Woningservice – Limburg, Antwerpen & Vlaams-Brabant" },
-      { name: "description", content: "Vanmol Tuinen: tuinonderhoud en snoeiwerken. Vanmol Woningservice: woningen leeg en netjes opgeleverd. Actief in Limburg, Antwerpen en Vlaams-Brabant. Vraag een vrijblijvende offerte." },
+      { name: "description", content: "Vanmol Tuinen & Woningservice voor tuinonderhoud, snoeiwerken en woningservice in Limburg, Antwerpen en Vlaams-Brabant. Vraag vrijblijvend een offerte." },
       { property: "og:title", content: "Vanmol Tuinen & Woningservice" },
       { property: "og:description", content: "Tuinonderhoud, snoeiwerken en woningontruiming in Limburg, Antwerpen en Vlaams-Brabant. Bel +32 470 66 64 24 voor een vrijblijvende offerte." },
-
+      { property: "og:url", content: "https://vanmoltw.be/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://vanmoltw.be/" }],
+
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
@@ -136,7 +138,7 @@ function Index() {
             <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground"><MapPin className="h-7 w-7" /></span>
             <div>
               <h2 className="text-2xl font-extrabold text-primary md:text-3xl">Werkgebied</h2>
-              <p className="text-muted-foreground">Wij komen in {AREA_TEXT} bij u.</p>
+              <p className="text-muted-foreground">Wij zijn actief in {AREA_TEXT} voor tuinonderhoud, snoeiwerken en woningservice.</p>
             </div>
           </div>
           <div>
