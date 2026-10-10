@@ -10,33 +10,44 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WoningLeegmakenLimburgKempenRouteImport } from './routes/woning-leegmaken-limburg-kempen'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WoningLeegmakenLimburgKempenRoute =
+  WoningLeegmakenLimburgKempenRouteImport.update({
+    id: '/woning-leegmaken-limburg-kempen',
+    path: '/woning-leegmaken-limburg-kempen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/woning-leegmaken-limburg-kempen': typeof WoningLeegmakenLimburgKempenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/woning-leegmaken-limburg-kempen': typeof WoningLeegmakenLimburgKempenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/woning-leegmaken-limburg-kempen': typeof WoningLeegmakenLimburgKempenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/woning-leegmaken-limburg-kempen'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/woning-leegmaken-limburg-kempen'
+  id: '__root__' | '/' | '/woning-leegmaken-limburg-kempen'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  WoningLeegmakenLimburgKempenRoute: typeof WoningLeegmakenLimburgKempenRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +59,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/woning-leegmaken-limburg-kempen': {
+      id: '/woning-leegmaken-limburg-kempen'
+      path: '/woning-leegmaken-limburg-kempen'
+      fullPath: '/woning-leegmaken-limburg-kempen'
+      preLoaderRoute: typeof WoningLeegmakenLimburgKempenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  WoningLeegmakenLimburgKempenRoute: WoningLeegmakenLimburgKempenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
