@@ -9,7 +9,7 @@ const EMAIL = "vanmoltuinen@gmail.com";
 const URL = "https://vanmoltw.be/woning-leegmaken-limburg-kempen";
 const TITLE = "Woning leegmaken in Limburg & de Kempen | Vanmol Woningservice";
 const DESC =
-  "Woning, appartement, garage, zolder of kelder laten leegmaken in Limburg of de Kempen? Vanmol Woningservice zorgt voor opruimen, afvoer en nette oplevering.";
+  "Woning leegmaken of huis leegruimen in Limburg of de Kempen? Vanmol Woningservice ruimt woning, appartement, garage, zolder of kelder op, voert af en levert netjes op.";
 
 export const Route = createFileRoute("/woning-leegmaken-limburg-kempen")({
   head: () => ({
@@ -23,6 +23,25 @@ export const Route = createFileRoute("/woning-leegmaken-limburg-kempen")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: URL }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Woning leegmaken en woningservice",
+        serviceType: "Woning leegmaken",
+        url: URL,
+        areaServed: ["Limburg, België", "Kempen, België"].map((a) => ({ "@type": "Place", name: a })),
+        provider: {
+          "@type": "LocalBusiness",
+          "@id": "https://vanmoltw.be/#business",
+          name: "Vanmol Tuinen & Woningservice",
+          url: "https://vanmoltw.be/",
+          telephone: PHONE,
+          email: EMAIL,
+        },
+      }),
+    }],
   }),
   component: Page,
 });
