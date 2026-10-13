@@ -23,6 +23,25 @@ export const Route = createFileRoute("/woning-leegmaken-limburg-kempen")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: URL }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Woning leegmaken en woningservice",
+        serviceType: "Woning leegmaken",
+        url: URL,
+        areaServed: ["Limburg, België", "Kempen, België"].map((a) => ({ "@type": "Place", name: a })),
+        provider: {
+          "@type": "LocalBusiness",
+          "@id": "https://vanmoltw.be/#business",
+          name: "Vanmol Tuinen & Woningservice",
+          url: "https://vanmoltw.be/",
+          telephone: PHONE,
+          email: EMAIL,
+        },
+      }),
+    }],
   }),
   component: Page,
 });

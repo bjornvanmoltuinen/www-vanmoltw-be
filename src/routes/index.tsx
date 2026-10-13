@@ -15,10 +15,10 @@ const AREA_TEXT = AREA.length > 2 ? `${AREA.slice(0, -1).join(", ")} en ${AREA[A
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vanmol Tuinen & Woningservice – Limburg, Antwerpen & Vlaams-Brabant" },
-      { name: "description", content: "Vanmol Tuinen & Woningservice voor tuinonderhoud, snoeiwerken en woningservice in Limburg, Antwerpen en Vlaams-Brabant. Vraag vrijblijvend een offerte." },
-      { property: "og:title", content: "Vanmol Tuinen & Woningservice" },
-      { property: "og:description", content: "Tuinonderhoud, snoeiwerken en woningontruiming in Limburg, Antwerpen en Vlaams-Brabant. Bel +32 470 66 64 24 voor een vrijblijvende offerte." },
+      { title: "Tuinonderhoud & snoeiwerken in Limburg | Vanmol Tuinen" },
+      { name: "description", content: "Tuinman voor tuinonderhoud, gras maaien en snoeiwerken in Lommel, Hasselt, Zonhoven en heel Limburg en de Kempen. Vanmol Tuinen & Woningservice – vrijblijvende offerte." },
+      { property: "og:title", content: "Tuinonderhoud & snoeiwerken in Limburg | Vanmol Tuinen" },
+      { property: "og:description", content: "Tuinonderhoud, hagen en bomen snoeien in Lommel, Hasselt, Zonhoven en omgeving. Bel +32 470 66 64 24 voor een vrijblijvende offerte." },
       { property: "og:url", content: "https://vanmoltw.be/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -30,10 +30,13 @@ export const Route = createFileRoute("/")({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
+        "@id": "https://vanmoltw.be/#business",
         name: "Vanmol Tuinen & Woningservice",
+        url: "https://vanmoltw.be/",
         telephone: PHONE,
         email: EMAIL,
-        areaServed: AREA_PLACES.map((a) => ({ "@type": "Place", name: a })),
+        areaServed: [...AREA_PLACES, "Kempen, België"].map((a) => ({ "@type": "Place", name: a })),
+        knowsAbout: ["Tuinonderhoud", "Snoeiwerken", "Woning leegmaken"],
       }),
     }],
   }),
